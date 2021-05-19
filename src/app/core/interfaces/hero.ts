@@ -1,6 +1,6 @@
 export interface IHero {
   name: string;
-  phone: number;
+  phone: string;
   email: string;
   date: string;
   country: string;
