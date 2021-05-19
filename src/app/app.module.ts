@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
+
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -19,6 +22,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CardModule,
     TableModule
   ],
   providers: [],

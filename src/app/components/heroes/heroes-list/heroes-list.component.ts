@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Table } from 'primeng/table';
 import { Subscription } from 'rxjs';
 import { IHero } from 'src/app/core/interfaces/hero';
 import { HeroesMockService } from 'src/app/services/heroes-mock.service';
