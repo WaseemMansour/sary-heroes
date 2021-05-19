@@ -1,9 +1,9 @@
 
 <div class="p-grid">
-  <div class="p-col" style="max-width:350px">
+  <div class="p-col" style="max-width:350px" *ngIf="showFilter" [@shrinkFade]>
     <app-heroes-filter></app-heroes-filter>
   </div>
   <div class="p-col">
-    <app-heroes-list></app-heroes-list>
+    <app-heroes-list (filterIsOpened)="handleFilterToggle($event)" ></app-heroes-list>
   </div>
 </div>

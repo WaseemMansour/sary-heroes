@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IHero } from 'src/app/core/interfaces/hero';
 import { HeroesMockService } from 'src/app/services/heroes-mock.service';
@@ -12,6 +12,9 @@ export class HeroesListComponent implements OnInit, OnDestroy {
 
   heroes: IHero[] = [];
   cols: any[] = [];
+
+  isFilterOpen = true;
+  @Output() filterIsOpened = new EventEmitter();
 
   heroesSubsciption = new Subscription();
 
@@ -31,6 +34,11 @@ export class HeroesListComponent implements OnInit, OnDestroy {
       { field: 'country', header: 'Country' },
       { field: 'company', header: 'Company' },
     ];
+  }
+
+  toggleFilter() {
+    this.isFilterOpen = !this.isFilterOpen;
+    this.filterIsOpened.emit(this.isFilterOpen);
   }
 
   ngOnDestroy(): void {

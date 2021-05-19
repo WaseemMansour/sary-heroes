@@ -9,7 +9,7 @@
             <i class="pi pi-search"></i>
             <input pInputText class="inputtext" type="text" (input)="dt1.filterGlobal(($any($event.target).value), 'contains')" placeholder="Search keyword" />
         </span>
-        <span class="pl-ml-auto p-mt-2">
+        <span class="pl-ml-auto p-mt-2 toggle-filter" (click)="toggleFilter()" title="Toggle Filter">
           <i class="pi pi-sliders-h"></i>
         </span>
       </div>

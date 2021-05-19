@@ -18,7 +18,6 @@ export class CountriesService {
   getCountrie(apiUrl: string): Observable<ICountry[]> {
     return this._http.get<ICountry[]>(apiUrl)
       .pipe(
-        tap(response => console.log(response)),
         map(response => response['Response'].map((country: ICountry) => {
           return {Name: country.Name, Alpha3Code: country.Alpha3Code}
         })),
