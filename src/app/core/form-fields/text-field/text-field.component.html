@@ -1,0 +1,11 @@
+<span class="p-float-label" [formGroup]="group">
+  <input id="float-input-{{field.title}}"
+    type="{{field.type}}"
+    class="inputtext"
+    #inputRef
+    [ngClass]="group.get(field.title).value?.length ? 'p-filled' : ''"
+    [formControlName]="field.title"
+    pInputText>
+  <label for="float-input">{{field.title}}</label>
+
+</span>

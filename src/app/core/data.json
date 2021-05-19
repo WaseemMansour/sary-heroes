@@ -80,5 +80,33 @@
       "country": "Monaco",
       "company": "Gillette"
     }
+  ],
+  "filterConfig": [
+    {
+    "title": "email",
+    "type": "text"
+    },
+    {
+      "title": "phone",
+      "type": "text"
+    },
+    {
+      "title": "name",
+      "type": "text"
+    },
+    {
+      "title": "company",
+      "type": "text"
+    },
+    {
+      "title": "country",
+      "type": "dropdown",
+      "api": "http://countryapi.gear.host/v1/Country/getCountries?pLimit=25&pPage=1",
+      "multiple": false
+    },
+    {
+      "title": "date",
+      "type": "date"
+    }
   ]
 }

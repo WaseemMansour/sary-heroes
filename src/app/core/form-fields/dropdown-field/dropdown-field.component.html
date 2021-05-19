@@ -1,0 +1,14 @@
+<div [formGroup]="group">
+  <p-dropdown (onChange)="onDropDownChange($event)" [options]="items$ | async" formControlName="{{field.title}}" optionLabel="Name" placeholder="Country">
+    <ng-template pTemplate="selectedItem">
+      <div class="country-item country-item-value" *ngIf="selectedItem">
+        <div>{{selectedItem.Name}}</div>
+      </div>
+    </ng-template>
+    <ng-template let-country pTemplate="item">
+      <div class="country-item">
+        <div>{{country.Name}}</div>
+      </div>
+    </ng-template>
+  </p-dropdown>
+</div>

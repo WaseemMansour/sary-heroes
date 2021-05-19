@@ -1,11 +1,12 @@
 <p-card class="p-p-0">
   <div class="p-fluid">
     <h2 class="p-text-center filter-title p-mt-0 p-pb-5">FILTERS</h2>
-    <div class="p-field">
-      <input id="firstname1" type="text" pInputText class="p-inputtext p-component" placeholder="">
-    </div>
-    <div class="p-field">
-      <input id="lastname1" type="text" pInputText class="p-inputtext p-component">
-    </div>
+    <form class="dynamic-form" [formGroup]="form" (submit)="onSubmit($event)">
+
+      <ng-container *ngFor="let field of fields;" appDynamicField [field]="field" [group]="form"></ng-container>
+
+      <button pButton type="submit" icon="pi pi-filter" iconPos="left" label="Filter"></button>
+    </form>
+    <!-- {{form.value | json}} -->
   </div>
 </p-card>
